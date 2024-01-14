@@ -1,19 +1,21 @@
 from random import choice, randint, random
 
 #Checks if a string is in source
-def analysis(source: str) -> str:
-    if '<@&732688521831383081>' in source:
+def analysis(ogStr: str) -> str:
+    if '<@&732688521831383081>' in ogStr:
         return 'briananime'
-    elif '<@&1192175976663232582>' in source:
+    elif '<@&1192175976663232582>' in ogStr:
         return 'brianlethalcompany'
-    elif '<@&694717398678372394' in source:
+    elif '<@&694717398678372394' in ogStr:
         return 'briansmash'
-    elif 'work' in source:
+    elif 'work' in ogStr:
         return 'work'
-    elif '<@436655054196441128>' in source:
+    elif '<@436655054196441128>' in ogStr:
         return 'matt'
-    elif 'test ' in source:
+    elif 'test ' in ogStr:
         return 'test'
+    else:
+        return ogStr
 
 #Returns based on the input of the message it reads in Sans Mains
 def get_response(user_input: str) -> str:
