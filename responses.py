@@ -14,6 +14,8 @@ def analysis(ogStr: str) -> str:
         return 'matt'
     elif 'test ' in ogStr:
         return 'test'
+    elif '<@&908554913024466996>' in ogStr:
+        return 'brianclash'
     else:
         return ogStr
 
@@ -78,5 +80,7 @@ def get_response(user_input: str) -> str:
                     return 'Matt... you are like african right?'
         case 'test':
             return 'Test?  I do not study for those...'
+        case 'brianclash':
+            return 'https://cdn.discordapp.com/attachments/766027094944645153/1196294920902824026/Brian_Clash_Time.jpg?ex=65b71b77&is=65a4a677&hm=2a354ad076dbea2cc9e0b400a9b70cf6be7dbfba62fc87a87c33e5fde0062738&'
         
         
