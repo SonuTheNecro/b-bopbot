@@ -33,7 +33,16 @@ def get_response(user_input: str) -> str:
         case 'gyatt':
             return 'Stick your gyatt out for the rizzler'
         case 'digitalcircus':
-            return 'Alright today, we are doing the digital circus challenge so lets see if we can do watch it in French!'
+            randno = randint(0,2)
+            match randno:
+                case 0:
+                    return 'Alright today, we are doing the digital circus challenge so lets see if we can do watch it in French!'
+                case 1:
+                    return 'WHAT IS UP YOUTUBE! Today we are seeing if we can watch all of the new SMG4 before Bbop gets on Lethal Company!'
+                case 2:
+                    return 'Digital Circus MID.  SMG4 & Hazbin Hotel PEAK'
+        case 'garten of banban':
+            return 'garten of peakpeak'
         case 'briansmash':
             #Roll the Dice
             if(randint(0,1) == 0):
@@ -41,7 +50,7 @@ def get_response(user_input: str) -> str:
             else:
                 return 'https://cdn.discordapp.com/attachments/766027094944645153/1195945072211013702/Brian_Smash_Time.png?ex=65b5d5a4&is=65a360a4&hm=f812e261d313bcdae1679f0fe008199300777fb477124ed376f1e8e3a3763b25&'
         case 'brianlethalcompany':
-            return 'https://cdn.discordapp.com/attachments/766027094944645153/1196940851696377988/Brian_Lethal_Time_2.jpg?ex=65b97509&is=65a70009&hm=171eb79936a3eb39c46f51b0b3f0d697f25a47902660a810ed3bb71c04150f71&'
+            return 'https://cdn.discordapp.com/attachments/766027094944645153/1196946708052050072/Brian_Lethal_Time_2.jpg?ex=65b97a7d&is=65a7057d&hm=74e5870d014d1790f898df9704d3ec0fb5ba4cfbcac2ca89c59b974800bd50b0&'
         case 'briananime':
             return 'https://cdn.discordapp.com/attachments/766027094944645153/1195931619102564512/Brian_Anime_Time.jpg?ex=65b5c91d&is=65a3541d&hm=1b7f0978c58ced0e4af816d4423cb0a6240e75dbf6615180e585c1e01a943441&'
         case 'brianclash':
