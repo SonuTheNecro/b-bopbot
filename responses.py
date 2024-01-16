@@ -32,6 +32,8 @@ def get_response(user_input: str) -> str:
             return 'Ohio'
         case 'gyatt':
             return 'Stick your gyatt out for the rizzler'
+        case 'digitalcircus':
+            return 'Alright today, we are doing the digital circus challenge so lets see if we can do watch it in French!'
         case 'briansmash':
             #Roll the Dice
             if(randint(0,1) == 0):
@@ -39,13 +41,13 @@ def get_response(user_input: str) -> str:
             else:
                 return 'https://cdn.discordapp.com/attachments/766027094944645153/1195945072211013702/Brian_Smash_Time.png?ex=65b5d5a4&is=65a360a4&hm=f812e261d313bcdae1679f0fe008199300777fb477124ed376f1e8e3a3763b25&'
         case 'brianlethalcompany':
-            return 'https://cdn.discordapp.com/attachments/1195931768247828511/1195947867471351928/brian_Lethal_Time.jpg?ex=65b5d83f&is=65a3633f&hm=2ae52d393f607c3e103ac4edd8c8cb9e8eab72ff64468247622265f1b2e60f12&'
+            return 'https://cdn.discordapp.com/attachments/766027094944645153/1196940851696377988/Brian_Lethal_Time_2.jpg?ex=65b97509&is=65a70009&hm=171eb79936a3eb39c46f51b0b3f0d697f25a47902660a810ed3bb71c04150f71&'
         case 'briananime':
             return 'https://cdn.discordapp.com/attachments/766027094944645153/1195931619102564512/Brian_Anime_Time.jpg?ex=65b5c91d&is=65a3541d&hm=1b7f0978c58ced0e4af816d4423cb0a6240e75dbf6615180e585c1e01a943441&'
-        case 'brianfnaf':
-            return 'https://cdn.discordapp.com/attachments/760905671133757442/1196247891405193276/Brian_Game_Time.gif?ex=65b6efaa&is=65a47aaa&hm=f7d892a4418995df310b3fa057c30d9a8f24547ef07e861895f9b5c9c4dfb847&'
+        case 'brianclash':
+            return 'https://cdn.discordapp.com/attachments/766027094944645153/1196943195674791936/Brian_Clash_Time2.jpg?ex=65b97737&is=65a70237&hm=bf439357d726620cfcd6d2d17fcbb06767149f0ebed8b2d5bb7496302ecd76be&'
         case 'work':
-            randno = randint(0,4)
+            randno = randint(0,6)
             match randno:
                 case 0:
                     return 'I can not wait to afford my own smash content house with my $1.39 per week'
@@ -57,8 +59,12 @@ def get_response(user_input: str) -> str:
                     return 'Gas Prices are just so high right now thanks to the terrible economy we are in...'
                 case 4:
                     return 'My last 3 paychecks were spent on Pokemon Go incubators...'
+                case 5:
+                    return 'I have invested heavily into the DogeCoin. Hopefully I can become a billionaire like Elon Musk Soon!'
+                case 6:
+                    return 'I have invested a lot of my personal savings into the housing market.  Surely it would not burst like a bubble'
         case 'matt':
-            randno2 = randint(0,8)
+            randno2 = randint(0,10)
             match randno2:
                 case 0:
                     return 'Soya... Shut the Fuck Up'
@@ -78,9 +84,12 @@ def get_response(user_input: str) -> str:
                     return 'Matt... you are like indian right?'
                 case 8:
                     return 'Matt... you are like african right?'
+                case 9:
+                    return 'Soya, who are you even talking to?'
+                case 10:
+                    return 'Mathew... You are like british? correcto?'
         case 'test':
             return 'Test?  I do not study for those...'
-        case 'brianclash':
-            return 'https://cdn.discordapp.com/attachments/766027094944645153/1196879066565967923/Brian_Clash_Time2.jpg?ex=65b93b7e&is=65a6c67e&hm=f71b87743b249addd6c3c1945c3fb52528cf50f26cef915b2f785a4026ffd0ac&'
+        
         
         
