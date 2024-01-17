@@ -45,18 +45,24 @@ def get_response(user_input: str) -> str:
             return 'garten of peakpeak'
         case 'briansmash':
             #Roll the Dice
-            if(randint(0,1) == 0):
-                return 'https://cdn.discordapp.com/attachments/766027094944645153/1195944151896830052/Brian_Smash_Time.png?ex=65b5d4c9&is=65a35fc9&hm=36ca33befe87ecd65a83ace0926917cc38cdb2142f990d142548d53d60a28751&'
-            else:
-                return 'https://cdn.discordapp.com/attachments/766027094944645153/1195945072211013702/Brian_Smash_Time.png?ex=65b5d5a4&is=65a360a4&hm=f812e261d313bcdae1679f0fe008199300777fb477124ed376f1e8e3a3763b25&'
+           randno = randint(0,3)
+           match randno:
+               case 0:
+                   return 'https://media.discordapp.net/attachments/766027094944645153/1196951444419514529/Brian_Smash_Time_Down.jpg?ex=65b97ee6&is=65a709e6&hm=f2226b6aa85b18c452b2b242310badafde77dc2a8837242c82546cef9920325b&=&format=webp&width=623&height=662'
+               case 1:
+                   return 'https://media.discordapp.net/attachments/766027094944645153/1196951444708925460/Brian_Smash_Time_Left.jpg?ex=65b97ee6&is=65a709e6&hm=e1badc56169ec024a544683309f490e0c0a24c5cc87855f987bd063859025e3c&=&format=webp&width=623&height=662'
+               case 2:
+                   return 'https://cdn.discordapp.com/attachments/766027094944645153/1196951444985757716/Brian_Smash_Time_Right.jpg?ex=65b97ee6&is=65a709e6&hm=4b2648904145ac63f3394b40fa9822f640821133644d28ce7916a84c22636afb&'
+               case 3:
+                   return 'https://cdn.discordapp.com/attachments/766027094944645153/1196951445275152434/Brian_Smash_Time_Up.jpg?ex=65b97ee6&is=65a709e6&hm=5b48b5dc28107234bb59938b1685460cb82758740e901a3cee9c7ac903622df7&'
         case 'brianlethalcompany':
             return 'https://cdn.discordapp.com/attachments/766027094944645153/1196946708052050072/Brian_Lethal_Time_2.jpg?ex=65b97a7d&is=65a7057d&hm=74e5870d014d1790f898df9704d3ec0fb5ba4cfbcac2ca89c59b974800bd50b0&'
         case 'briananime':
-            return 'https://cdn.discordapp.com/attachments/766027094944645153/1195931619102564512/Brian_Anime_Time.jpg?ex=65b5c91d&is=65a3541d&hm=1b7f0978c58ced0e4af816d4423cb0a6240e75dbf6615180e585c1e01a943441&'
+            return 'https://cdn.discordapp.com/attachments/766027094944645153/1196962782235598900/Brian_Anime_Time2.jpg?ex=65b98975&is=65a71475&hm=f638ee432ba450fe46a1a25c0a721d724d1399d6943223af1243e1cdd99e3693&'
         case 'brianclash':
             return 'https://cdn.discordapp.com/attachments/766027094944645153/1196943195674791936/Brian_Clash_Time2.jpg?ex=65b97737&is=65a70237&hm=bf439357d726620cfcd6d2d17fcbb06767149f0ebed8b2d5bb7496302ecd76be&'
         case 'work':
-            randno = randint(0,6)
+            randno = randint(0,8)
             match randno:
                 case 0:
                     return 'I can not wait to afford my own smash content house with my $1.39 per week'
@@ -72,6 +78,10 @@ def get_response(user_input: str) -> str:
                     return 'I have invested heavily into the DogeCoin. Hopefully I can become a billionaire like Elon Musk Soon!'
                 case 6:
                     return 'I have invested a lot of my personal savings into the housing market.  Surely it would not burst like a bubble'
+                case 7:
+                    return 'I have now received my raise of $15 per hour.  Hopefully I can contribute a lot to Zaiyldes House'
+                case 8:
+                    return 'I have now purchased another Switch Oled Pro Hypermax 1080p 60FPS mode!  It goes Crazy!!'
         case 'matt':
             randno2 = randint(0,10)
             match randno2:
