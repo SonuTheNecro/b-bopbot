@@ -83,8 +83,8 @@ def get_response(user_input: str) -> str:
                 case 8:
                     return 'I have now purchased another Switch Oled Pro Hypermax 1080p 60FPS mode!  It goes Crazy!!'
         case 'matt':
-            randno2 = randint(0,10)
-            match randno2:
+            randno = randint(0,10)
+            match randno:
                 case 0:
                     return 'Soya... Shut the Fuck Up'
                 case 1:
@@ -109,6 +109,36 @@ def get_response(user_input: str) -> str:
                     return 'Mathew... You are like british? correcto?'
         case 'test':
             return 'Test?  I do not study for those...'
-        
+        case 'lethal company':
+            lethalCompany = ''
+            word1 = random.choice('dangerous', 'destructive', 'devasting', 'fatal', 'harmful', 'malignant', 'mortal', 'murderious', 'noxious', 'deadly', 'poisonous', 'terminal', 'deathly', 'risky')
+            word2 = random.choice('association', 'club', 'company', 'organization', 'party', 'community', 'clan', 'clique', 'crew', 'ensemble', 'horde', 'league', 'gathering', 'order', 'troope')
+            lethalCompany = word1 + '' + word2
+            return lethalCompany
+        case 'brianjewelfacts':
+            randno = randint(0,10)
+            match randno:
+                case 0:
+                    return 'I am currently working til unix.MaxValue so call me until then'
+                case 1:
+                    return 'I will get on at around 11:00 and by 11:00.  I actually mean 12:32 the next day. :D'
+                case 2:
+                    return 'I am working the night shift as Charles Entertainment Cheeses Restaurant'
+                case 3:
+                    return 'The Jewel Osco Manager is asking me for 29 hours of overtime. BRB'
+                case 4:
+                    return 'A fat vietnamese teenager just arrived at the Jewels so I have to make sure he is not stealing stuff'
+                case 5:
+                    return 'I am currently traveling to Indiana for that extra overtime bonus.'
+                case 6: 
+                    return 'Jewel Osco Just gave me a promotion.  I am now the Manager for every department.  My payment is now 15.50 per hour'
+                case 7:
+                    return 'I used my employee discount to buy a google play gift card for 5 percent off for clash royale'
+                case 8:
+                    return 'Thang keeps calling me at my workplace.  I have been working for the past 128 hours and this kid wants to hangout like wtf'
+                case 9:
+                    return 'I can not wait to get off of the clock to play a videogame where we go on the clock.'
+                case 10: 
+                    return 'My life goal is to become the next Little Z.  Hopefully I can'
         
         
