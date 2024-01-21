@@ -16,6 +16,8 @@ def analysis(ogStr: str) -> str:
         return 'test'
     elif '<@&908554913024466996>' in ogStr:
         return 'brianclash'
+    elif 'jewel' in ogStr:
+        return 'brianjewelfacts'
     else:
         return ogStr
 
@@ -113,7 +115,7 @@ def get_response(user_input: str) -> str:
             lethalCompany = ''
             word1 = random.choice('dangerous', 'destructive', 'devasting', 'fatal', 'harmful', 'malignant', 'mortal', 'murderious', 'noxious', 'deadly', 'poisonous', 'terminal', 'deathly', 'risky')
             word2 = random.choice('association', 'club', 'company', 'organization', 'party', 'community', 'clan', 'clique', 'crew', 'ensemble', 'horde', 'league', 'gathering', 'order', 'troope')
-            lethalCompany = word1 + '' + word2
+            lethalCompany = lethalCompany + ' ' + word1 + ' ' + word2
             return lethalCompany
         case 'brianjewelfacts':
             randno = randint(0,10)
@@ -140,5 +142,16 @@ def get_response(user_input: str) -> str:
                     return 'I can not wait to get off of the clock to play a videogame where we go on the clock.'
                 case 10: 
                     return 'My life goal is to become the next Little Z.  Hopefully I can'
-        
+                case 11:
+                    return 'I just bought the steve dlc for smash 5.  I deserve to win every game now : D'
+                case 12: 
+                    return 'My Jewels is now hiring guys.  Please go to our website for more information!'
+                case 13:
+                    return 'I just caught someone pissing in the brocolii in the vegetable section. WTF'
+                case 14: 
+                    return 'I really hope I can get a promotion to be a senior manager for the deli department.  I really like the meats'
+                case 15:
+                    return 'These jewel osco employees do not realize I am actually an accounting major'
+                case 16:
+                    return 'Honestly, Target is just a better store not gonna lie. #NotSponsered #TotallySponsered'
         
