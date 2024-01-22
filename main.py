@@ -2,9 +2,9 @@
 
 import os
 from dotenv import load_dotenv
-from discord import Intents, Client, Message
+from discord import Intents, Client, Message, Game
 from responses import get_response
-
+from random import randint
 # Load Token
 
 load_dotenv()
@@ -36,6 +36,7 @@ async def send_message(message, user_message) -> None:
         
 @client.event
 async def on_ready() -> None:
+    await client.change_presence(activity=Game('Apex Legends'))
     print(f'{client.user} has joined the company')
 
 
@@ -53,6 +54,8 @@ async def on_message(message) -> None:
 
 def main() -> None:
     client.run(token=TOKEN)
+
+
 
 if __name__ == '__main__':
     main()
