@@ -112,10 +112,9 @@ def get_response(user_input: str) -> str:
         case 'test':
             return 'Test?  I do not study for those...'
         case 'lethal company phrase':
-            lethalCompany = ''
             word1 = choice(['dangerous', 'destructive', 'devasting', 'fatal', 'harmful', 'malignant', 'mortal', 'murderious', 'noxious', 'deadly', 'poisonous', 'terminal', 'deathly', 'risky'])
             word2 = choice(['association', 'club', 'company', 'organization', 'party', 'community', 'clan', 'clique', 'crew', 'ensemble', 'horde', 'league', 'gathering', 'order', 'troope'])
-            lethalCompany = lethalCompany + ' ' + word1 + ' ' + word2
+            lethalCompany = word1 + ' ' + word2
             return lethalCompany
         case 'brianjewelfacts':
             randno = randint(0,10)
