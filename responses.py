@@ -113,8 +113,8 @@ def get_response(user_input: str) -> str:
             return 'Test?  I do not study for those...'
         case 'lethal company':
             lethalCompany = ''
-            word1 = random.choice('dangerous', 'destructive', 'devasting', 'fatal', 'harmful', 'malignant', 'mortal', 'murderious', 'noxious', 'deadly', 'poisonous', 'terminal', 'deathly', 'risky')
-            word2 = random.choice('association', 'club', 'company', 'organization', 'party', 'community', 'clan', 'clique', 'crew', 'ensemble', 'horde', 'league', 'gathering', 'order', 'troope')
+            word1 = random.choice(['dangerous', 'destructive', 'devasting', 'fatal', 'harmful', 'malignant', 'mortal', 'murderious', 'noxious', 'deadly', 'poisonous', 'terminal', 'deathly', 'risky'])
+            word2 = random.choice(['association', 'club', 'company', 'organization', 'party', 'community', 'clan', 'clique', 'crew', 'ensemble', 'horde', 'league', 'gathering', 'order', 'troope'])
             lethalCompany = lethalCompany + ' ' + word1 + ' ' + word2
             return lethalCompany
         case 'brianjewelfacts':
