@@ -58,7 +58,15 @@ def get_response(user_input: str) -> str:
                case 3:
                    return 'https://cdn.discordapp.com/attachments/766027094944645153/1196951445275152434/Brian_Smash_Time_Up.jpg?ex=65b97ee6&is=65a709e6&hm=5b48b5dc28107234bb59938b1685460cb82758740e901a3cee9c7ac903622df7&'
         case 'brianlethalcompany':
-            return 'https://cdn.discordapp.com/attachments/766027094944645153/1196946708052050072/Brian_Lethal_Time_2.jpg?ex=65b97a7d&is=65a7057d&hm=74e5870d014d1790f898df9704d3ec0fb5ba4cfbcac2ca89c59b974800bd50b0&'
+            randno = randint (0,2)
+            match randno:
+                case 0:
+                    return 'https://cdn.discordapp.com/attachments/766027094944645153/1196946708052050072/Brian_Lethal_Time_2.jpg?ex=65b97a7d&is=65a7057d&hm=74e5870d014d1790f898df9704d3ec0fb5ba4cfbcac2ca89c59b974800bd50b0&'
+                case 1:
+                    return 'https://cdn.discordapp.com/attachments/766027094944645153/1199235647643324528/Brian_Lethal_Time_3.jpg?ex=65c1ce3b&is=65af593b&hm=236a391f7551d2f041ab37951683f061c8e3f561ec4e77671151293684b4996b&'
+                case 2:
+                    return 'https://cdn.discordapp.com/attachments/766027094944645153/1199235678827978823/Brian_Lethal_Time_4.jpg?ex=65c1ce42&is=65af5942&hm=9acc8e2b7ecc84f4540f728fcfe3c8f012b6edeef43b97b612242ccd8cb2000f&'
+        
         case 'briananime':
             return 'https://cdn.discordapp.com/attachments/766027094944645153/1196962782235598900/Brian_Anime_Time2.jpg?ex=65b98975&is=65a71475&hm=f638ee432ba450fe46a1a25c0a721d724d1399d6943223af1243e1cdd99e3693&'
         case 'brianclash':
