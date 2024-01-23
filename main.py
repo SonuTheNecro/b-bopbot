@@ -36,7 +36,7 @@ async def send_message(message, user_message) -> None:
         
 @client.event
 async def on_ready() -> None:
-    pick_status()
+    await pick_status()
     print(f'{client.user} has joined the company')
 
 
@@ -65,9 +65,9 @@ async def pick_status() -> None:
         case 2:
             await client.change_presence(activity=Game('Lethal Company'))
         case 3:
-            await client.change_presence(Activity=Game(name="Super Smash Bros Ultimate", type=3))
+            await client.change_presence(Activity=Game(name="Super Smash Bros Ultimate"))
         case 4:
-            await client.change_presence(Activity=Game(name="Dokapon Kingdom! Connect", type=3))
+            await client.change_presence(Activity=Game(name="Dokapon Kingdom! Connect"))
 
 
 
