@@ -162,4 +162,6 @@ def get_response(user_input: str) -> str:
             return lethalCompany
         case 'brianjewelfacts':
             return 'このコメントは削除されました。このバグが発生した場合は、開発者に報告してください。'
+        case 'ThangGame':
+            return 'The Current Build of ThangaGamea (Thang Game) is here! \n https://drive.google.com/file/d/12ILjOrwKzhXiz_FFjn5tDQqhnVPp-B3c/view?usp=drive_link'
                 
