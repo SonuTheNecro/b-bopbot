@@ -10,14 +10,14 @@ def analysis(ogStr: str) -> str:
         return 'briansmash'
     elif 'work' in ogStr:
         return 'work'
+    elif 'jewel' in ogStr:
+        return 'work'
     elif '<@436655054196441128>' in ogStr:
         return 'matt'
     elif 'test ' in ogStr:
         return 'test'
     elif '<@&908554913024466996>' in ogStr:
         return 'brianclash'
-    elif 'jewel' in ogStr:
-        return 'brianjewelfacts'
     else:
         return ogStr
 
@@ -64,60 +64,7 @@ def get_response(user_input: str) -> str:
         case 'brianclash':
             return 'https://cdn.discordapp.com/attachments/766027094944645153/1196943195674791936/Brian_Clash_Time2.jpg?ex=65b97737&is=65a70237&hm=bf439357d726620cfcd6d2d17fcbb06767149f0ebed8b2d5bb7496302ecd76be&'
         case 'work':
-            randno = randint(0,8)
-            match randno:
-                case 0:
-                    return 'I can not wait to afford my own smash content house with my $1.39 per week'
-                case 1:
-                    return 'I am at work for the next 72 hours so contact me then if you want to voice chat :D'
-                case 2:
-                    return 'I have used 95 percent of my life savings on Clash Royale and Apex Legends'
-                case 3:
-                    return 'Gas Prices are just so high right now thanks to the terrible economy we are in...'
-                case 4:
-                    return 'My last 3 paychecks were spent on Pokemon Go incubators...'
-                case 5:
-                    return 'I have invested heavily into the DogeCoin. Hopefully I can become a billionaire like Elon Musk Soon!'
-                case 6:
-                    return 'I have invested a lot of my personal savings into the housing market.  Surely it would not burst like a bubble'
-                case 7:
-                    return 'I have now received my raise of $15 per hour.  Hopefully I can contribute a lot to Zaiyldes House'
-                case 8:
-                    return 'I have now purchased another Switch Oled Pro Hypermax 1080p 60FPS mode!  It goes Crazy!!'
-        case 'matt':
-            randno = randint(0,10)
-            match randno:
-                case 0:
-                    return 'Soya... Shut the Fuck Up'
-                case 1:
-                    return 'Matt, no one asked you!'
-                case 2:
-                    return 'Matt... you are like korean right?'
-                case 3:
-                    return 'Matt... you are like japanese right?'
-                case 4:
-                    return 'Matt... you are like chinese right?'
-                case 5:
-                    return 'Matt... you are like taiwaneese right?'
-                case 6:
-                    return 'Matt... you are like vietnamease right?'
-                case 7:
-                    return 'Matt... you are like indian right?'
-                case 8:
-                    return 'Matt... you are like african right?'
-                case 9:
-                    return 'Soya, who are you even talking to?'
-                case 10:
-                    return 'Mathew... You are like british? correcto?'
-        case 'test':
-            return 'Test?  I do not study for those...'
-        case 'lethal company phrase':
-            word1 = choice(['dangerous', 'destructive', 'devasting', 'fatal', 'harmful', 'malignant', 'mortal', 'murderious', 'noxious', 'deadly', 'poisonous', 'terminal', 'deathly', 'risky'])
-            word2 = choice(['association', 'club', 'company', 'organization', 'party', 'community', 'clan', 'clique', 'crew', 'ensemble', 'horde', 'league', 'gathering', 'order', 'troope'])
-            lethalCompany = word1 + ' ' + word2
-            return lethalCompany
-        case 'brianjewelfacts':
-            randno = randint(0,10)
+            randno = randint(0,30)
             match randno:
                 case 0:
                     return 'I am currently working til unix.MaxValue so call me until then'
@@ -153,4 +100,66 @@ def get_response(user_input: str) -> str:
                     return 'These jewel osco employees do not realize I am actually an accounting major'
                 case 16:
                     return 'Honestly, Target is just a better store not gonna lie. #NotSponsered #TotallySponsered'
-        
+                case 17:
+                    return 'I am really excited to try Honkai Star Rail.  Oh wait my phone from 2001 keeps crashing wtf'
+                case 18:
+                    return 'Jewel Osco actually is a great place for medicine! Highly recommend 10/10'
+                case 19:
+                    return 'I cannot wait to get off of the clock to play a video game where I am on the clock :D'
+                case 20:
+                    return 'This message has been censored and removed by Albertsons, American Stores, and Jewel Companies Inc due to the harassment and false statements provided by the individual.'
+                case 21:
+                    return 'I can not wait to afford my own smash content house with my $1.39 per week'
+                case 22:
+                    return 'I am at work for the next 72 hours so contact me then if you want to voice chat :D'
+                case 23:
+                    return 'I have used 95 percent of my life savings on Clash Royale and Apex Legends'
+                case 24:
+                    return 'Gas Prices are just so high right now thanks to the terrible economy we are in...'
+                case 25:
+                    return 'My last 3 paychecks were spent on Pokemon Go incubators...'
+                case 26:
+                    return 'I have invested heavily into the DogeCoin. Hopefully I can become a billionaire like Elon Musk Soon!'
+                case 27:
+                    return 'I have invested a lot of my personal savings into the housing market.  Surely it would not burst like a bubble'
+                case 28:
+                    return 'I have now received my raise of $15 per hour.  Hopefully I can contribute a lot to Zaiyldes House'
+                case 29:
+                    return 'I have now purchased another Switch Oled Pro Hypermax 1080p 60FPS mode!  It goes Crazy!!'
+                case 30:
+                    return 'I am excited to purchase Orange Juice when it gets a 20 cent discount :D'
+        case 'matt':
+            randno = randint(0,10)
+            match randno:
+                case 0:
+                    return 'Soya... Shut the Fuck Up'
+                case 1:
+                    return 'Matt, no one asked you!'
+                case 2:
+                    return 'Matt... you are like korean right?'
+                case 3:
+                    return 'Matt... you are like japanese right?'
+                case 4:
+                    return 'Matt... you are like chinese right?'
+                case 5:
+                    return 'Matt... you are like taiwaneese right?'
+                case 6:
+                    return 'Matt... you are like vietnamease right?'
+                case 7:
+                    return 'Matt... you are like indian right?'
+                case 8:
+                    return 'Matt... you are like african right?'
+                case 9:
+                    return 'Soya, who are you even talking to?'
+                case 10:
+                    return 'Mathew... You are like british? correcto?'
+        case 'test':
+            return 'Test?  I do not study for those...'
+        case 'lethal company phrase':
+            word1 = choice(['dangerous', 'destructive', 'devasting', 'fatal', 'harmful', 'malignant', 'mortal', 'murderious', 'noxious', 'deadly', 'poisonous', 'terminal', 'deathly', 'risky'])
+            word2 = choice(['association', 'club', 'company', 'organization', 'party', 'community', 'clan', 'clique', 'crew', 'ensemble', 'horde', 'league', 'gathering', 'order', 'troope'])
+            lethalCompany = word1 + ' ' + word2
+            return lethalCompany
+        case 'brianjewelfacts':
+            return 'このコメントは削除されました。このバグが発生した場合は、開発者に報告してください。'
+                
