@@ -65,9 +65,9 @@ async def pick_status() -> None:
         case 2:
             await client.change_presence(activity=Game('Lethal Company'))
         case 3:
-            await client.change_presence(Activity=Game(name='Super Smash Bros Ultimate'))
+            await client.change_presence(activity=Game(name='Super Smash Bros Ultimate'))
         case 4:
-            await client.change_presence(Activity=Game(name='Dokapon Kingdom! Connect'))
+            await client.change_presence(activity=Game(name='Dokapon Kingdom! Connect'))
 
 
 
