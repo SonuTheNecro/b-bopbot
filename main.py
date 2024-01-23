@@ -36,7 +36,6 @@ async def send_message(message, user_message) -> None:
         
 @client.event
 async def on_ready() -> None:
-    await client.change_presence(activity=Game('Apex Legends'))
     print(f'{client.user} has joined the company')
 
 
@@ -55,7 +54,23 @@ async def on_message(message) -> None:
 def main() -> None:
     client.run(token=TOKEN)
 
+async def pick_status() -> None:
+    randno = randint(0,4)
+    match randno:
+        case 0:
+            await client.change_presence(activity=Game('Apex Legends'))
+        case 1:
+            await client.change_presence(activity=Game('Clash Royale'))
+        case 2:
+            await client.change_presence(activity=Game('Lethal Company'))
+        case 3:
+            await client.change_presence(Activity=Game(name="Super Smash Bros Ultimate", type=3))
+        case 4:
+            await client.change_presence(Activity=Game(name="Dokapon Kingdom! Connect", type=3))
+
+
 
 
 if __name__ == '__main__':
     main()
+    pick_status()
