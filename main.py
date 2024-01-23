@@ -36,6 +36,7 @@ async def send_message(message, user_message) -> None:
         
 @client.event
 async def on_ready() -> None:
+    pick_status()
     print(f'{client.user} has joined the company')
 
 
@@ -73,4 +74,3 @@ async def pick_status() -> None:
 
 if __name__ == '__main__':
     main()
-    pick_status()
