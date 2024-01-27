@@ -72,8 +72,8 @@ def get_response(user_input: str) -> str:
         case 'brianclash':
             return 'https://cdn.discordapp.com/attachments/766027094944645153/1196943195674791936/Brian_Clash_Time2.jpg?ex=65b97737&is=65a70237&hm=bf439357d726620cfcd6d2d17fcbb06767149f0ebed8b2d5bb7496302ecd76be&'
         case 'work':
-            randno = randint(0,30)
-            match randno:
+            randno2 = randint(0,40)
+            match randno2:
                 case 0:
                     return 'I am currently working til unix.MaxValue so call me until then'
                 case 1:
@@ -136,6 +136,26 @@ def get_response(user_input: str) -> str:
                     return 'I have now purchased another Switch Oled Pro Hypermax 1080p 60FPS mode!  It goes Crazy!!'
                 case 30:
                     return 'I am excited to purchase Orange Juice when it gets a 20 cent discount :D'
+                case 31:
+                    return 'There is apparently rotting meat in the Deli Section so I have to fix that!'
+                case 32:
+                    return 'My Jewel Osco salary goes straight to Nintendo Switches.  Hopefully they do not release another Switch... like A Switch 2 perhaps'
+                case 33:
+                    return 'I am really excited to invest a lot of my money into an investable asset.  I put a lot of it into Elon Musk Doge Coin so hopefully that pays out!'
+                case 34: 
+                    return 'I have been provided an Iphone 23 as a work phone for my job at Jewel Oscos.  What they do not know is that I installed Clash onto it >:D'
+                case 35:
+                    return 'I am being told that they just released Sora into Smash Ultimate. I gotta get him with my 2.99 per week salary.'
+                case 36:
+                    return 'I just got the high quality known as Dasani I think it is what its called?  I heard its very rich and fancy!'
+                case 37:
+                    return 'I cannot afford the New Pokemon game.  I have to ask Mr. Weis for a small loan to get it + the dlc'
+                case 38:
+                    return 'I just bought a crunchyroll subscription and this shit is in 480p.  I want my money back'
+                case 39:
+                    return 'I am actually watching horimiya at work on the cashier positon.  Straight up gooning'
+                case 40: 
+                    return 'yeah ill be in vc at 10:30'
         case 'matt':
             randno = randint(0,10)
             match randno:
