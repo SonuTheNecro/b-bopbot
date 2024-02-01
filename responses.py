@@ -156,6 +156,12 @@ def get_response(user_input: str) -> str:
                     return 'I am actually watching horimiya at work on the cashier positon.  Straight up gooning'
                 case 40: 
                     return 'yeah ill be in vc at 10:30'
+                case 41:
+                    return 'BRB guys, Im going to work for 3 pizzas from Pizza Hut Costing 90$ for the whole set!'
+                case 42:
+                    return 'I just bought 4 copies of uno for $50.  That was 20 hours of my effort for this...'
+                case 43:
+                    return 'I am really excited to purchase Epstein Island: The Game It looks very unique and cool'
         case 'matt':
             randno = randint(0,10)
             match randno:

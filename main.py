@@ -56,7 +56,7 @@ def main() -> None:
     client.run(token=TOKEN)
 
 async def pick_status() -> None:
-    randno = randint(0,4)
+    randno = randint(0,6)
     match randno:
         case 0:
             await client.change_presence(activity=Game('Apex Legends'))
@@ -65,9 +65,15 @@ async def pick_status() -> None:
         case 2:
             await client.change_presence(activity=Game('Lethal Company'))
         case 3:
-            await client.change_presence(activity=Game(name='Super Smash Bros Ultimate'))
+            await client.change_presence(activity=Game('Super Smash Bros Ultimate'))
         case 4:
-            await client.change_presence(activity=Game(name='Dokapon Kingdom! Connect'))
+            await client.change_presence(activity=Game('Dokapon Kingdom! Connect'))
+        case 5:
+            await client.change_presence(activity=Game('Epstein Island: The Video Game'))
+        case 6:
+            await client.change_presence(activity=Game('Uno!'))
+        case 7:
+            await client.change_presence(activity=Game('Dead By Daylight'))
 
 
 
