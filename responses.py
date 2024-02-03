@@ -72,7 +72,7 @@ def get_response(user_input: str) -> str:
         case 'brianclash':
             return 'https://cdn.discordapp.com/attachments/766027094944645153/1196943195674791936/Brian_Clash_Time2.jpg?ex=65b97737&is=65a70237&hm=bf439357d726620cfcd6d2d17fcbb06767149f0ebed8b2d5bb7496302ecd76be&'
         case 'work':
-            randno2 = randint(0,40)
+            randno2 = randint(0,50)
             match randno2:
                 case 0:
                     return 'I am currently working til unix.MaxValue so call me until then'
@@ -162,6 +162,20 @@ def get_response(user_input: str) -> str:
                     return 'I just bought 4 copies of uno for $50.  That was 20 hours of my effort for this...'
                 case 43:
                     return 'I am really excited to purchase Epstein Island: The Game It looks very unique and cool'
+                case 44:
+                    return 'https://cdn.discordapp.com/attachments/766027094944645153/1203437100834230302/Brian_Jewel.png?ex=65d11723&is=65bea223&hm=19119252b4d933a9b113ec82677562b1a38f834a4cca8d04610c496d2407700d&'
+                case 45:
+                    return 'I woke up early to play smash bros for my University.  I think they are a DK player?  Hope we get a nice clean game'
+                case 46:
+                    return 'I woke up at 10 am to play smash bros for my University.  I think they are a ZSS player?  Hope we get a nice clean game'
+                case 47:
+                    return 'I got this new Lethal Company mod where you just work at jewel osco and that is the whole gameplay'
+                case 48:
+                    return 'Chick-Fil-A just offered me a scholarship.  I might have to switch sides!'
+                case 49:
+                    return 'I just bought 20 copies of Dokapon Kingdom King Merch, maybe I can flip them!'
+                case 50:
+                    return 'I just tried out Honkai Star Rail. This shit crashed on my IPhone 2s'
         case 'matt':
             randno = randint(0,10)
             match randno:
