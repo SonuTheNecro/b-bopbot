@@ -4,7 +4,11 @@ from random import choice, randint
 
 #Checks if a string is in source
 def analysis(ogStr: str) -> str:
-    if 'among' in ogStr:
+    if '!update_status' in ogStr:
+        return '!update_status'
+    elif '!change_status' in ogStr:
+        return '!change_status'
+    elif 'among' in ogStr:
         return 'among'
     elif '<@&732688521831383081>' in ogStr:
         return 'briananime'
@@ -44,8 +48,12 @@ def get_response(user_input: str) -> str:
     
     
     match lowered:
+        case '!update_status':
+            return 'You do not have the correct permissions/ missing paramaters'
+        case '!change_status':
+            return 'This command does not exist! Did you mean !update_status?'
         case 'among':
-            return '               :black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square:\n                            :black_large_square::red_square::red_square::red_square::red_square::red_square::red_square::black_large_square:\n                       :black_large_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::black_large_square:\n                 :black_large_square::red_square::red_square::red_square::red_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square:\n                 :black_large_square::red_square::red_square::red_square::black_large_square::blue_square::blue_square::white_large_square::white_large_square::white_large_square::white_large_square::black_large_square:\n                 :black_large_square::red_square::red_square::black_large_square::purple_square::blue_square::blue_square::blue_square::white_large_square::white_large_square::white_large_square::blue_square::black_large_square:\n      :black_large_square::black_large_square::black_large_square::red_square::red_square::black_large_square::purple_square::blue_square::blue_square::blue_square::blue_square::blue_square::blue_square::blue_square::black_large_square:\n:black_large_square::red_square::red_square::black_large_square::red_square::red_square::black_large_square::purple_square::purple_square::purple_square::blue_square::blue_square::blue_square::blue_square::purple_square::black_large_square:\n:black_large_square::red_square::red_square::black_large_square::red_square::red_square::red_square::black_large_square::purple_square::purple_square::purple_square::purple_square::purple_square::purple_square::black_large_square:\n:black_large_square::red_square::red_square::black_large_square::red_square::red_square::red_square::red_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square:\n:black_large_square::red_square::red_square::black_large_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::black_large_square:\n:black_large_square::red_square::red_square::black_large_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::black_large_square:\n:black_large_square::red_square::red_square::black_large_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::black_large_square:\n:black_large_square::red_square::red_square::black_large_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::black_large_square:\n:black_large_square::red_square::red_square::black_large_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::black_large_square:\n:black_large_square::red_square::red_square::black_large_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::black_large_square:\n     :black_large_square::black_large_square::black_large_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::black_large_square:\n                :black_large_square::red_square::red_square::red_square::black_large_square::black_large_square::black_large_square::black_large_square::red_square::red_square::red_square::black_large_square:\n                :black_large_square::red_square::red_square::red_square::black_large_square:           :black_large_square::red_square::red_square::red_square::black_large_square:\n'
+            return 'https://media1.tenor.com/m/jUMex_rdqPwAAAAd/among-us-twerk.gif'
         case 'skibidi':
             return 'Toilet'
         case 'what is the best state?':
