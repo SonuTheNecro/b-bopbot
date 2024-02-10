@@ -1,8 +1,12 @@
-from random import choice, randint, random
+# Argument Winner Code was lost media found by JigglyJello and is under authorized permission.  All reproduced code is ILLEGAL and will be filed with a jokingly DMCA
+
+from random import choice, randint
 
 #Checks if a string is in source
 def analysis(ogStr: str) -> str:
-    if '<@&732688521831383081>' in ogStr:
+    if 'among' in ogStr:
+        return 'among'
+    elif '<@&732688521831383081>' in ogStr:
         return 'briananime'
     elif '<@&1192175976663232582>' in ogStr:
         return 'brianlethalcompany'
@@ -20,6 +24,18 @@ def analysis(ogStr: str) -> str:
         return 'brianclash'
     else:
         return ogStr
+    
+#Author JigglyJello No DMCA PLEASE!
+def argument_winner(inputStr: str) -> str:
+    response: str = ""
+    for char in inputStr:
+        if randint(0,1) == 1:
+            response += char.upper()
+        else:
+            response += char.lower()
+    print("Send this to your enemy to win the arguement\n" + response)
+    return response
+
 
 #Returns based on the input of the message it reads in Sans Mains
 def get_response(user_input: str) -> str:
@@ -28,6 +44,8 @@ def get_response(user_input: str) -> str:
     
     
     match lowered:
+        case 'among':
+            return '               :black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square:\n                            :black_large_square::red_square::red_square::red_square::red_square::red_square::red_square::black_large_square:\n                       :black_large_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::black_large_square:\n                 :black_large_square::red_square::red_square::red_square::red_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square:\n                 :black_large_square::red_square::red_square::red_square::black_large_square::blue_square::blue_square::white_large_square::white_large_square::white_large_square::white_large_square::black_large_square:\n                 :black_large_square::red_square::red_square::black_large_square::purple_square::blue_square::blue_square::blue_square::white_large_square::white_large_square::white_large_square::blue_square::black_large_square:\n      :black_large_square::black_large_square::black_large_square::red_square::red_square::black_large_square::purple_square::blue_square::blue_square::blue_square::blue_square::blue_square::blue_square::blue_square::black_large_square:\n:black_large_square::red_square::red_square::black_large_square::red_square::red_square::black_large_square::purple_square::purple_square::purple_square::blue_square::blue_square::blue_square::blue_square::purple_square::black_large_square:\n:black_large_square::red_square::red_square::black_large_square::red_square::red_square::red_square::black_large_square::purple_square::purple_square::purple_square::purple_square::purple_square::purple_square::black_large_square:\n:black_large_square::red_square::red_square::black_large_square::red_square::red_square::red_square::red_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square:\n:black_large_square::red_square::red_square::black_large_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::black_large_square:\n:black_large_square::red_square::red_square::black_large_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::black_large_square:\n:black_large_square::red_square::red_square::black_large_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::black_large_square:\n:black_large_square::red_square::red_square::black_large_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::black_large_square:\n:black_large_square::red_square::red_square::black_large_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::black_large_square:\n:black_large_square::red_square::red_square::black_large_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::black_large_square:\n     :black_large_square::black_large_square::black_large_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::red_square::black_large_square:\n                :black_large_square::red_square::red_square::red_square::black_large_square::black_large_square::black_large_square::black_large_square::red_square::red_square::red_square::black_large_square:\n                :black_large_square::red_square::red_square::red_square::black_large_square:           :black_large_square::red_square::red_square::red_square::black_large_square:\n'
         case 'skibidi':
             return 'Toilet'
         case 'what is the best state?':
@@ -213,3 +231,4 @@ def get_response(user_input: str) -> str:
         case 'thanggame':
             return 'The Current Build of ThangaGamea (Thang Game) is here! \n https://drive.google.com/file/d/12ILjOrwKzhXiz_FFjn5tDQqhnVPp-B3c/view?usp=drive_link'
                 
+
