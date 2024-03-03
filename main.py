@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 from discord import Intents, Client, Message, Game
 from responses import get_response, argument_winner
-from random import randint
+from random import randint, choice
 # Load Token
 
 load_dotenv()
@@ -63,39 +63,30 @@ async def on_message(message) -> None:
     if(username == ADMIN and '!update_status' in user_message):
         await update_status(user_message)
         return
+    if("ocho" in user_message.lower()):
+        await ocho_check(message)
     await send_message(message, user_message)
 
 def main() -> None:
     client.run(token=TOKEN)
-
+#Picks a random game as the status
 async def pick_status() -> None:
-    randno = randint(0,8)
-    match randno:
-        case 0:
-            await client.change_presence(activity=Game('Apex Legends'))
-        case 1:
-            await client.change_presence(activity=Game('Clash Royale'))
-        case 2:
-            await client.change_presence(activity=Game('Lethal Company'))
-        case 3:
-            await client.change_presence(activity=Game('Super Smash Bros Ultimate'))
-        case 4:
-            await client.change_presence(activity=Game('Dokapon Kingdom! Connect'))
-        case 5:
-            await client.change_presence(activity=Game('Epstein Island: The Video Game'))
-        case 6:
-            await client.change_presence(activity=Game('Uno!'))
-        case 7:
-            await client.change_presence(activity=Game('Dead By Daylight'))
-        case 8:
-            await client.change_presence(activity=Game('ඞ Among Us: Nintendo Switch Imposter Edition ඞ'))
+    random_game = choice(['Apex Legends', 'Clash Royale', 'Lethal Company', 'Super Smash Bros Ultimate', 'Dokapon Kingdom! Connect', 'Epstein Island: The Video Game', 'Uno!', 'Dead by Daylight', 'ඞ Among Us: Nintendo Switch Imposter Edition ඞ', 'Brawl Stars', 'Rocket League', 'League of Legends', 'Unknown Error! DM B-Bop82 for information!'])
+    await client.change_presence(activity=Game(random_game))
 
+#Picks the status based on User_Input
 async def update_status(input_str: str) -> None:
     input_str = input_str[14:]
     await client.change_presence(activity=Game(input_str))
     return
 
+# async def random_kick() -> None:
 
+
+#Reacts with dog emojis
+async def ocho_check(message):
+    await message.add_reaction("🐕")
+    await message.add_reaction("🐶")
 
 
 if __name__ == '__main__':
