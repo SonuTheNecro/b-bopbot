@@ -59,6 +59,9 @@ async def on_message(message) -> None:
     user_message = message.content
     channel = str(message.channel)
     print(f'[{channel}] {username}: "{user_message}"')
+    fileStream = open("log.txt", "a")
+    fileStream.write(f'[{channel}] {username}: "{user_message}"\n')
+    fileStream.close()
 
     if(username == ADMIN and '!update_status' in user_message):
         await update_status(user_message)
@@ -81,7 +84,6 @@ async def update_status(input_str: str) -> None:
     return
 
 # async def random_kick() -> None:
-
 
 #Reacts with dog emojis
 async def ocho_check(message):
