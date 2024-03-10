@@ -90,8 +90,8 @@ def get_response(user_input: str) -> str:
             return file_read_rng('brian_work_quotes.txt')
         case 'matt':
             subject = choice(['Matt', 'Mathew', 'Soya', 'OchoOwner'])
-            race = choice(['Korean','Japanese','Chinese','Taiwaneese','Indian','Vietnamease','African','Yapanese','British','Scotish','Polish','German','American','Canadian'])
-            sentence = subject + ' You are like ' + race + ' right?'
+            race = choice(['Korean','Japanese','Chinese','Taiwaneese','Indian','Vietnamease','African','Yapanese','British','Scotish','Polish','German','American','Canadian','Roman','Spanish','Italian','Ohioian','North Koreanease'])
+            sentence = subject + ', You are like ' + race + ' right?'
             return sentence
         case 'test':
             return 'Test?  I do not study for those...'
@@ -102,7 +102,5 @@ def get_response(user_input: str) -> str:
             return lethalCompany
         case 'brianjewelfacts':
             return 'このコメントは削除されました。このバグが発生した場合は、開発者に報告してください。'
-        case 'thanggame':
-            return 'The Current Build of ThangaGamea (Thang Game) is here! \n https://drive.google.com/file/d/12ILjOrwKzhXiz_FFjn5tDQqhnVPp-B3c/view?usp=drive_link'
                 
 

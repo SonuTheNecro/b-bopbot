@@ -3,8 +3,11 @@
 import os
 from dotenv import load_dotenv
 from discord import Intents, Client, Message, Game
+import discord
+from discord.ext import commands, tasks
 from responses import get_response, argument_winner
 from random import randint, choice
+import asyncio
 # Load Token
 
 load_dotenv()
@@ -45,8 +48,8 @@ async def send_message(message, user_message) -> None:
         
 @client.event
 async def on_ready() -> None:
-    await pick_status()
     print(f'{client.user} has joined the company')
+    
 
 
 @client.event
@@ -68,28 +71,34 @@ async def on_message(message) -> None:
         return
     if("ocho" in user_message.lower()):
         await ocho_check(message)
+    if(username == ADMIN and '!pick_status' in user_message):
+        await pick_status()
+        return
     await send_message(message, user_message)
 
 def main() -> None:
     client.run(token=TOKEN)
+    
+    
 #Picks a random game as the status
 async def pick_status() -> None:
     random_game = choice(['Apex Legends', 'Clash Royale', 'Lethal Company', 'Super Smash Bros Ultimate', 'Dokapon Kingdom! Connect', 'Epstein Island: The Video Game', 'Uno!', 'Dead by Daylight', 'ඞ Among Us: Nintendo Switch Imposter Edition ඞ', 'Brawl Stars', 'Rocket League', 'League of Legends', 'Unknown Error! DM B-Bop82 for information!'])
     await client.change_presence(activity=Game(random_game))
 
 #Picks the status based on User_Input
+
 async def update_status(input_str: str) -> None:
     input_str = input_str[14:]
     await client.change_presence(activity=Game(input_str))
     return
 
-# async def random_kick() -> None:
 
 #Reacts with dog emojis
 async def ocho_check(message):
     await message.add_reaction("🐕")
     await message.add_reaction("🐶")
-
+    await message.add_reaction("🦴")
+    await message.add_reaction("🍖")
 
 if __name__ == '__main__':
     main()
