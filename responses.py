@@ -102,5 +102,7 @@ def get_response(user_input: str) -> str:
             return lethalCompany
         case 'brianjewelfacts':
             return 'このコメントは削除されました。このバグが発生した場合は、開発者に報告してください。'
+        case 'makebriansuperangry':
+            return 'Some Things Never Change https://cdn.discordapp.com/attachments/862800362192896006/1224183524471603370/image.png?ex=661c90c0&is=660a1bc0&hm=614fd9d4b56ad527c6307e87c3b40dcbbfd775466768106d875ed7189f5108c7&'
                 
 

@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from discord import Intents, Client, Message, Game
 import discord
 from discord.ext import commands, tasks
-from responses import get_response, argument_winner
+from responses import get_response, argument_winner, file_read_rng
 from random import randint, choice
 import asyncio
 # Load Token
@@ -65,7 +65,10 @@ async def on_message(message) -> None:
     fileStream = open("log.txt", "a")
     fileStream.write(f'[{channel}] {username}: "{user_message}"\n')
     fileStream.close()
-
+    if(username == 'bbop82' and ('cant' in user_message or 'can\'t' in user_message)):
+        temp1 = file_read_rng('ocho_reaction.txt')
+        await message.author.send(temp1)
+        return
     if(username == ADMIN and '!update_status' in user_message):
         await update_status(user_message)
         return
@@ -84,7 +87,6 @@ def main() -> None:
 async def pick_status() -> None:
     random_game = choice(['Apex Legends', 'Clash Royale', 'Lethal Company', 'Super Smash Bros Ultimate', 'Dokapon Kingdom! Connect', 'Epstein Island: The Video Game', 'Uno!', 'Dead by Daylight', 'ඞ Among Us: Nintendo Switch Imposter Edition ඞ', 'Brawl Stars', 'Rocket League', 'League of Legends', 'Unknown Error! DM B-Bop82 for information!'])
     await client.change_presence(activity=Game(random_game))
-
 #Picks the status based on User_Input
 
 async def update_status(input_str: str) -> None:
