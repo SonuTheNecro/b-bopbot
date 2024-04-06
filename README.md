@@ -10,4 +10,5 @@ Change @roles and @usernames with desired ones
 Change switch statements for desired images (or don't)  
 
 ### Credits
-SonuTheNecro - Mostly had to read a bunch of Documentation for discord.py and create the bot  JigglyJello - Wrote Argument Winner and provided a lot of ideas
+SonuTheNecro - Mostly had to read a bunch of Documentation for discord.py and create the bot  
+JigglyJello - Wrote Argument Winner and provided a lot of ideas
