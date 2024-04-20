@@ -65,7 +65,7 @@ async def on_message(message) -> None:
     fileStream = open("log.txt", "a")
     fileStream.write(f'[{channel}] {username}: "{user_message}"\n')
     fileStream.close()
-    if(username == 'bbop82' and ('cant' in user_message or 'can\'t' in user_message)):
+    if(username == 'bbop82' and ('cant' in user_message or 'can\'t' in user_message or 'Cant' in user_message or 'Can\'t' in user_message)):
         temp1 = file_read_rng('ocho_reaction.txt')
         await message.author.send(temp1)
         return

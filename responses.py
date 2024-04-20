@@ -62,7 +62,7 @@ def get_response(user_input: str) -> str:
             return 'https://media1.tenor.com/m/jUMex_rdqPwAAAAd/among-us-twerk.gif'
         case 'briansmash':
             #Roll the Dice
-           randno = randint(0,3)
+           randno = randint(0,5)
            match randno:
                case 0:
                    return 'https://media.discordapp.net/attachments/766027094944645153/1196951444419514529/Brian_Smash_Time_Down.jpg?ex=65b97ee6&is=65a709e6&hm=f2226b6aa85b18c452b2b242310badafde77dc2a8837242c82546cef9920325b&=&format=webp&width=623&height=662'
@@ -72,6 +72,10 @@ def get_response(user_input: str) -> str:
                    return 'https://cdn.discordapp.com/attachments/766027094944645153/1196951444985757716/Brian_Smash_Time_Right.jpg?ex=65b97ee6&is=65a709e6&hm=4b2648904145ac63f3394b40fa9822f640821133644d28ce7916a84c22636afb&'
                case 3:
                    return 'https://cdn.discordapp.com/attachments/766027094944645153/1196951445275152434/Brian_Smash_Time_Up.jpg?ex=65b97ee6&is=65a709e6&hm=5b48b5dc28107234bb59938b1685460cb82758740e901a3cee9c7ac903622df7&'
+               case 4:
+                   return 'https://cdn.discordapp.com/attachments/766027094944645153/1230736673072222328/Brian_Smash_Time_Kalos.jpg?ex=6623ed18&is=66229b98&hm=870f1e130f809157ee156543b85fcea59e68d3f36a2b29a9a84fabeca3cfb525&'
+               case 5:
+                   return 'https://cdn.discordapp.com/attachments/766027094944645153/1230739130980499466/Brian_PS2.jpg?ex=66346a22&is=6621f522&hm=1cf834a953b795eb384ce0223de98421fa8a0274e0c62dc9a079400ce5e730ff&'
         case 'brianlethalcompany':
             randno = randint (0,2)
             match randno:
@@ -90,7 +94,7 @@ def get_response(user_input: str) -> str:
             return file_read_rng('brian_work_quotes.txt')
         case 'matt':
             subject = choice(['Matt', 'Mathew', 'Soya', 'OchoOwner'])
-            race = choice(['Korean','Japanese','Chinese','Taiwaneese','Indian','Vietnamease','African','Yapanese','British','Scotish','Polish','German','American','Canadian','Roman','Spanish','Italian','Ohioian','North Koreanease'])
+            race = choice(['Korean','Japanese','Chinese','Taiwaneese','Indian','Vietnamease','African','Yapanese','British','Scotish','Polish','German','American','Canadian','Roman','Spanish','Italian','Ohioian','North Koreanease', 'Nebraskian'])
             sentence = subject + ', You are like ' + race + ' right?'
             return sentence
         case 'test':
