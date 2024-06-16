@@ -67,7 +67,8 @@ async def on_message(message) -> None:
     fileStream.close()
     if(username == 'bbop82' and ('cant' in user_message.lower() or 'can\'t' in user_message.lower())):
         temp1 = file_read_rng('ocho_reaction.txt')
-        await message.author.send(temp1)
+        #await message.author.send(temp1)
+        message.channel.send(temp1)
         return
     if(username == ADMIN and '!update_status' in user_message):
         await update_status(user_message)
