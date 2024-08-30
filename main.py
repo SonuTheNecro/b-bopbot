@@ -65,8 +65,12 @@ async def on_message(message) -> None:
     fileStream = open("log.txt", "a")
     fileStream.write(f'[{channel}] {username}: "{user_message}"\n')
     fileStream.close()
+
     if("ocho" in user_message.lower()):
         await ocho_check(message)
+    if len(user_message) > 300:
+        await puking_horse(message)
+        return
     if(username == 'bbop82' and ('cant' in user_message.lower() or 'can\'t' in user_message.lower())):
         temp1 = file_read_rng('ocho_reaction.txt')
         #await message.author.send(temp1)
@@ -123,6 +127,29 @@ async def great_leader_response(message,value: bool) -> None:
         await message.channel.send("https://tenor.com/view/memes-gif-9980668056796018353") #TRUTH
     else:
         await message.channel.send("https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXlpbWtlMDF5emwwdjAyZ3lobzhod2ZpczBoOHRmdXZ4c2hrZmlpMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Hb4Ns3rwPXmkdYhKnv/giphy.gif") #FALSE
+# Sends a random message of a horse
+async def puking_horse(message) -> None:
+    string = ""
+    match randint(0,8):
+        case 0:
+            string = "https://cdn.discordapp.com/attachments/694710307909533760/1278895612355674222/GWMVToiXkAALMpL.png?ex=66d3209a&is=66d1cf1a&hm=501c9b8cbb304f3e2d9fac47b0ef1238b09e55479704c5728bc878e3c959374d&"
+        case 1:
+            string = "https://pbs.twimg.com/media/GWLCxqwXIAADaA6?format=jpg&name=small"
+        case 2:
+            string = "https://pbs.twimg.com/media/GWKYtXcW4AAxK7H?format=jpg&name=240x240"
+        case 3:
+            string = "https://cdn.discordapp.com/attachments/1148460410719182909/1278850641183375380/GWFWHVUW8AAT62c.png?ex=66d2f6b8&is=66d1a538&hm=1e83d54a16fd3e1a7d620748790b6d350288e3b7804c5713a42360641c0bca13&"
+        case 4:
+            string = "https://pbs.twimg.com/media/GWLeiX_WUAAlFrN?format=jpg&name=small"
+        case 5:
+            string = "https://pbs.twimg.com/media/GWLCY2hWEAAdYlC?format=jpg&name=medium"
+        case 6:
+            string = "https://pbs.twimg.com/media/GWLCY2aWIAA43eE?format=jpg&name=medium"
+        case 7:
+            string = "https://pbs.twimg.com/media/GWLCY2jWgAEybE8?format=jpg&name=medium"
+        case 8:
+            string = "https://pbs.twimg.com/media/GWKGr7IWgAEDaGd?format=jpg&name=900x900"
+    await message.channel.send(string)
 
 if __name__ == '__main__':
     main()
