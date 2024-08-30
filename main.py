@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from discord import Intents, Client, Message, Game
 import discord
 from discord.ext import commands, tasks
-from responses import get_response, argument_winner, file_read_rng
+from responses import get_response, argument_winner, file_read_rng, nux_taxu_response
 from random import randint, choice
 import asyncio
 # Load Token
@@ -35,10 +35,33 @@ async def send_message(message, user_message) -> None:
     randno = randint(0,99)
 
     try:
-        if(randno == 95):
-            response = argument_winner(user_message)
-        else:    
-            response = get_response(user_message)
+        match randno:
+            case 95:
+                response = argument_winner(user_message)
+            case 94:
+                response = "idgaf"
+            case 93:
+                response = "AND BUMBLEBEE!"
+            case 51:
+                response = nux_taxu_response(user_message)
+            case 52:
+                response = nux_taxu_response(user_message)
+            case 53:
+                response = nux_taxu_response(user_message)
+            case 54:
+                response = nux_taxu_response(user_message)
+            case 55:
+                response = nux_taxu_response(user_message)
+            case 56:
+                response = nux_taxu_response(user_message)
+            case 57:
+                response = nux_taxu_response(user_message)
+            case 58:
+                response = nux_taxu_response(user_message)
+            case 59:
+                response = nux_taxu_response(user_message)
+            case _:    
+                response = get_response(user_message)
         
         await message.author.send(response) if is_private else await message.channel.send(response)
     except Exception as e:
@@ -48,7 +71,7 @@ async def send_message(message, user_message) -> None:
         
 @client.event
 async def on_ready() -> None:
-    print(f'{client.user} has joined the company')
+    print(f'{client.user} has joined the Arena')
     
 
 
@@ -79,9 +102,9 @@ async def on_message(message) -> None:
     if(username == ADMIN and '!update_status' in user_message):
         await update_status(user_message)
         return
-    if(username == ADMIN and '!pick_status' in user_message):
-        await pick_status()
-        return
+    #if(username == ADMIN and '!pick_status' in user_message):
+        #await pick_status()
+        #return
     # If Thang tries to use the Lord's weapon against us
     if 'https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXlpbWtlMDF5emwwdjAyZ3lobzhod2ZpczBoOHRmdXZ4c2hrZmlpMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Hb4Ns3rwPXmkdYhKnv/giphy.gif' in user_message or "https://tenor.com/view/memes-gif-9980668056796018353" in user_message:
         if username == 'thangamangalang':
@@ -98,10 +121,9 @@ def main() -> None:
     
 #Picks a random game as the status
 async def pick_status() -> None:
-    random_game = choice(['Apex Legends', 'Clash Royale', 'Lethal Company', 'Super Smash Bros Ultimate', 'Dokapon Kingdom! Connect', 'Epstein Island: The Video Game', 'Uno!', 'Dead by Daylight', 'ඞ Among Us: Nintendo Switch Imposter Edition ඞ', 'Brawl Stars', 'Rocket League', 'League of Legends', 'Unknown Error! DM B-Bop82 for information!'])
+    random_game = choice(['Apex Legends', 'Unknown Error! DM B-Bop82 for information!', "Thanga-GameH"])
     await client.change_presence(activity=Game(random_game))
 #Picks the status based on User_Input
-
 async def update_status(input_str: str) -> None:
     input_str = input_str[14:]
     await client.change_presence(activity=Game(input_str))

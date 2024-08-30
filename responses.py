@@ -1,14 +1,10 @@
 # Argument Winner Code was lost media found by JigglyJello and is under authorized permission.  All reproduced code is ILLEGAL and will be filed with a jokingly DMCA
 
 from random import choice, randint
-
+import re
 #Checks if a string is in source
 def analysis(ogStr: str) -> str:
-    if '!update_status' in ogStr:
-        return '!update_status'
-    elif '!change_status' in ogStr:
-        return '!change_status'
-    elif 'among' in ogStr:
+    if 'among' in ogStr:
         return 'among'
     elif '<@&732688521831383081>' in ogStr:
         return 'briananime'
@@ -17,13 +13,11 @@ def analysis(ogStr: str) -> str:
     elif '<@&694717398678372394' in ogStr:
         return 'briansmash'
     elif 'work' in ogStr:
-        return 'work'
+        return 'brianwork'
     elif 'jewel' in ogStr:
-        return 'work'
+        return 'brianwork'
     elif '<@436655054196441128>' in ogStr:
         return 'matt'
-    elif 'test ' in ogStr:
-        return 'test'
     elif '<@&908554913024466996>' in ogStr:
         return 'brianclash'
     else:
@@ -54,10 +48,6 @@ def get_response(user_input: str) -> str:
     
     
     match lowered:
-        case '!update_status':
-            return 'You do not have the correct permissions/ missing paramaters'
-        case '!change_status':
-            return 'This command does not exist! Did you mean !update_status?'
         case 'among':
             return 'https://media1.tenor.com/m/jUMex_rdqPwAAAAd/among-us-twerk.gif'
         case 'briansmash':
@@ -77,7 +67,7 @@ def get_response(user_input: str) -> str:
                case 5:
                    return 'https://cdn.discordapp.com/attachments/766027094944645153/1230739130980499466/Brian_PS2.jpg?ex=66346a22&is=6621f522&hm=1cf834a953b795eb384ce0223de98421fa8a0274e0c62dc9a079400ce5e730ff&'
         case 'brianlethalcompany':
-            randno = randint (0,2)
+            randno = randint (0,3)
             match randno:
                 case 0:
                     return 'https://cdn.discordapp.com/attachments/766027094944645153/1196946708052050072/Brian_Lethal_Time_2.jpg?ex=65b97a7d&is=65a7057d&hm=74e5870d014d1790f898df9704d3ec0fb5ba4cfbcac2ca89c59b974800bd50b0&'
@@ -85,28 +75,58 @@ def get_response(user_input: str) -> str:
                     return 'https://cdn.discordapp.com/attachments/766027094944645153/1199235647643324528/Brian_Lethal_Time_3.jpg?ex=65c1ce3b&is=65af593b&hm=236a391f7551d2f041ab37951683f061c8e3f561ec4e77671151293684b4996b&'
                 case 2:
                     return 'https://cdn.discordapp.com/attachments/766027094944645153/1199235678827978823/Brian_Lethal_Time_4.jpg?ex=65c1ce42&is=65af5942&hm=9acc8e2b7ecc84f4540f728fcfe3c8f012b6edeef43b97b612242ccd8cb2000f&'
-        
+                case 3:
+                    return 'https://cdn.discordapp.com/attachments/1195931768247828511/1279204173593972828/image.png?ex=66d39739&is=66d245b9&hm=c65cb3c54255d1d287dd8f1fc4026ebbf911649a11cd591798096124afe7975a&'
         case 'briananime':
             return 'https://cdn.discordapp.com/attachments/766027094944645153/1196962782235598900/Brian_Anime_Time2.jpg?ex=65b98975&is=65a71475&hm=f638ee432ba450fe46a1a25c0a721d724d1399d6943223af1243e1cdd99e3693&'
         case 'brianclash':
             return 'https://cdn.discordapp.com/attachments/766027094944645153/1196943195674791936/Brian_Clash_Time2.jpg?ex=65b97737&is=65a70237&hm=bf439357d726620cfcd6d2d17fcbb06767149f0ebed8b2d5bb7496302ecd76be&'
-        case 'work':
+        case 'brianwork':
             return file_read_rng('brian_work_quotes.txt')
         case 'matt':
             subject = choice(['Matt', 'Mathew', 'Soya', 'OchoOwner'])
             race = choice(['Korean','Japanese','Chinese','Taiwaneese','Indian','Vietnamease','African','Yapanese','British','Scotish','Polish','German','American','Canadian','Roman','Spanish','Italian','Ohioian','North Koreanease', 'Nebraskian'])
-            sentence = subject + ', You are like ' + race + ' right?'
+            sentence = subject + ", Aren't You are like " + race + ' right?'
             return sentence
-        case 'test':
-            return 'Test?  I do not study for those...'
         case 'lethal company phrase':
             word1 = choice(['dangerous', 'destructive', 'devasting', 'fatal', 'harmful', 'malignant', 'mortal', 'murderious', 'noxious', 'deadly', 'poisonous', 'terminal', 'deathly', 'risky'])
             word2 = choice(['association', 'club', 'company', 'organization', 'party', 'community', 'clan', 'clique', 'crew', 'ensemble', 'horde', 'league', 'gathering', 'order', 'troope'])
             lethalCompany = word1 + ' ' + word2
             return lethalCompany
-        case 'brianjewelfacts':
-            return 'このコメントは削除されました。このバグが発生した場合は、開発者に報告してください。'
-        case 'makebriansuperangry':
-            return 'Some Things Never Change https://cdn.discordapp.com/attachments/862800362192896006/1224183524471603370/image.png?ex=661c90c0&is=660a1bc0&hm=614fd9d4b56ad527c6307e87c3b40dcbbfd775466768106d875ed7189f5108c7&'
-                
+        case 'p2025':
+            return "that's like unrelated to trump!"
+# Code that WE made me and TUX TAXU MADE
+def nux_taxu_response(user_input: str) -> str:
+    key_list = {
+        r'\bI AM\b':  'WE ARE',
+        r'\bi am\b':  'We are',
+        r"\bI'm\b":  "WE\'RE",
+        r"\bi'm\b":  "we\'re",
+        r"\bI WAS\b":  "WE WERE",
+        r"\bi was\b":  "we were",
+        r"\bi\b":  "we",
+        r"\bI\b":  "We",
+        r"\bimma\b":  "we gonna",
+        r"\bidk\b":  "wdk",
+        r"\bidc\b":  "wdc",
+        r"\bidfk\b":  "wdfk",
+        r"\bidfc\b":  "wdfc",
+        r"\bidgaf\b":  "wdgaf",
+        r"\bme\b":  "us",
+        r"\bMe\b":  "Us",
+        r"\bME\b":  "US",
+        r"\bMyself\b":  "Ourselves",
+        r"\bMYSELF\b":  "OURSELVES",
+        r"\bmyself\b":  "ourselves",
+        r"\bMy\b":  "Our",
+        r"\bMY\b":  "OUR",
+        r"\bmy\b":  "our",
+        r"\bMine\b":  "Ours",
+        r"\bMINE\b":  "OURS",
+        r"\bmine\b":  "ours",
+    }
+    response = user_input
+    for key, key_list in key_list.items():
+        response = re.sub(key,key_list, response, flags=re.IGNORECASE)
 
+    return response
