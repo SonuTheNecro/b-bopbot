@@ -4,18 +4,18 @@ from random import choice, randint
 import re
 #Checks if a string is in source
 def analysis(ogStr: str) -> str:
-    if 'among' in ogStr:
+    if 'project 2025' in ogStr:
+        return 'p2025'
+    elif 'among' in ogStr:
         return 'among'
+    elif 'work' in ogStr or 'jewel' in ogStr:
+        return 'brianwork'
     elif '<@&732688521831383081>' in ogStr:
         return 'briananime'
     elif '<@&1192175976663232582>' in ogStr:
         return 'brianlethalcompany'
     elif '<@&694717398678372394' in ogStr:
         return 'briansmash'
-    elif 'work' in ogStr:
-        return 'brianwork'
-    elif 'jewel' in ogStr:
-        return 'brianwork'
     elif '<@436655054196441128>' in ogStr:
         return 'matt'
     elif '<@&908554913024466996>' in ogStr:
@@ -51,7 +51,6 @@ def get_response(user_input: str) -> str:
         case 'among':
             return 'https://media1.tenor.com/m/jUMex_rdqPwAAAAd/among-us-twerk.gif'
         case 'briansmash':
-            #Roll the Dice
            randno = randint(0,5)
            match randno:
                case 0:
@@ -94,12 +93,13 @@ def get_response(user_input: str) -> str:
             lethalCompany = word1 + ' ' + word2
             return lethalCompany
         case 'p2025':
-            return "that's like unrelated to trump!"
-# Code that WE made me and TUX TAXU MADE
+            return "that's like unrelated to trump! or so I have been told..."
+# Code that WE made me and TUX TAXU MADE FT. BUMBLEBEE
 def nux_taxu_response(user_input: str) -> str:
     key_list = {
         r'\bI AM\b':  'WE ARE',
-        r'\bi am\b':  'We are',
+        r'\bi am\b':  'we are',
+        r'\bI am\b':  'We are',
         r"\bI'm\b":  "WE\'RE",
         r"\bi'm\b":  "we\'re",
         r"\bI WAS\b":  "WE WERE",
