@@ -128,5 +128,7 @@ def nux_taxu_response(user_input: str) -> str:
     response = user_input
     for key, key_list in key_list.items():
         response = re.sub(key,key_list, response, flags=re.IGNORECASE)
-
-    return response
+    if response == user_input:
+        get_response(user_input)
+    else:
+        return response
