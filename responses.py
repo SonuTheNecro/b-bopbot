@@ -66,7 +66,7 @@ def get_response(user_input: str) -> str:
                case 5:
                    return 'https://cdn.discordapp.com/attachments/766027094944645153/1230739130980499466/Brian_PS2.jpg?ex=66346a22&is=6621f522&hm=1cf834a953b795eb384ce0223de98421fa8a0274e0c62dc9a079400ce5e730ff&'
         case 'brianlethalcompany':
-            randno = randint (0,3)
+            randno = randint (0,6)
             match randno:
                 case 0:
                     return 'https://cdn.discordapp.com/attachments/766027094944645153/1196946708052050072/Brian_Lethal_Time_2.jpg?ex=65b97a7d&is=65a7057d&hm=74e5870d014d1790f898df9704d3ec0fb5ba4cfbcac2ca89c59b974800bd50b0&'
@@ -76,8 +76,18 @@ def get_response(user_input: str) -> str:
                     return 'https://cdn.discordapp.com/attachments/766027094944645153/1199235678827978823/Brian_Lethal_Time_4.jpg?ex=65c1ce42&is=65af5942&hm=9acc8e2b7ecc84f4540f728fcfe3c8f012b6edeef43b97b612242ccd8cb2000f&'
                 case 3:
                     return 'https://cdn.discordapp.com/attachments/1195931768247828511/1279204173593972828/image.png?ex=66d39739&is=66d245b9&hm=c65cb3c54255d1d287dd8f1fc4026ebbf911649a11cd591798096124afe7975a&'
+                case 4:
+                    return 'https://cdn.discordapp.com/attachments/696393779552321557/1247621757192507556/Matt_Lethal_Time.jpg?ex=66d9fbce&is=66d8aa4e&hm=2823ecd42ac59adeaa304eea7fd6287d606c1ac38c259cc238202705994cfc24&'
+                case 5:
+                    return 'https://cdn.discordapp.com/attachments/696393779552321557/1247621757758865569/Brian_Lethal_Time_6.jpg?ex=66d9fbce&is=66d8aa4e&hm=e0ec7edc64498163991ba8b798a780968575d70765dbc2ae5f475797840a7f2d&'
+                case 6:
+                    return 'https://cdn.discordapp.com/attachments/696393779552321557/1247621758224306349/Brian_Lethal_Time_5.jpg?ex=66d9fbce&is=66d8aa4e&hm=29b2d6d4d0f1368793c4c73a8261d9322d2f891cf0f84b647cb2f5db8efec285&'
         case 'briananime':
-            return 'https://cdn.discordapp.com/attachments/766027094944645153/1196962782235598900/Brian_Anime_Time2.jpg?ex=65b98975&is=65a71475&hm=f638ee432ba450fe46a1a25c0a721d724d1399d6943223af1243e1cdd99e3693&'
+            match randint(0,1):
+                case 0:
+                    return 'https://cdn.discordapp.com/attachments/766027094944645153/1196962782235598900/Brian_Anime_Time2.jpg?ex=65b98975&is=65a71475&hm=f638ee432ba450fe46a1a25c0a721d724d1399d6943223af1243e1cdd99e3693&'
+                case 1:
+                    return 'https://cdn.discordapp.com/attachments/696393779552321557/1280989974052737034/Brian_Anime_Time3.jpg?ex=66da1661&is=66d8c4e1&hm=18520f8e37a7d9927f263d2c8b469c5c2f21b519329646676e91c906abb13b44&'
         case 'brianclash':
             return 'https://cdn.discordapp.com/attachments/766027094944645153/1196943195674791936/Brian_Clash_Time2.jpg?ex=65b97737&is=65a70237&hm=bf439357d726620cfcd6d2d17fcbb06767149f0ebed8b2d5bb7496302ecd76be&'
         case 'brianwork':
