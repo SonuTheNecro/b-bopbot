@@ -177,7 +177,7 @@ async def puking_horse(message) -> None:
 # Replies whenever maan checks with the full combo
 async def maan_check(message) -> None:
     await message.channel.send("Nah I'm Good")
-    await message.channel.send(":skull")
+    await message.channel.send(":skull:")
     await message.channel.send("idgaf")
     await message.add_reaction("🤮")
     await message.add_reaction("🥸")
