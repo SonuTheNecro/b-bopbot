@@ -88,7 +88,9 @@ async def on_message(message) -> None:
     fileStream = open("log.txt", "a")
     fileStream.write(f'[{channel}] {username}: "{user_message}"\n')
     fileStream.close()
-
+    if username == 'thaze.':
+        await maan_check(message)
+        return
     if("ocho" in user_message.lower()):
         await ocho_check(message)
     if len(user_message) > 300:
@@ -172,6 +174,15 @@ async def puking_horse(message) -> None:
         case 8:
             string = "https://pbs.twimg.com/media/GWKGr7IWgAEDaGd?format=jpg&name=900x900"
     await message.channel.send(string)
-
+# Replies whenever maan checks with the full combo
+async def maan_check(message) -> None:
+    await message.channel.send("Nah I'm Good")
+    await message.channel.send(":skull")
+    await message.channel.send("idgaf")
+    await message.add_reaction("🤮")
+    await message.add_reaction("🥸")
+    await message.add_reaction("💀")
+    await message.add_reaction("🤡")
+    await message.add_reaction("🙉")
 if __name__ == '__main__':
     main()
