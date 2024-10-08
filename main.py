@@ -12,7 +12,10 @@ import asyncio
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
-ADMIN = 'sonuthenecro'
+ADMIN = os.getenv('ADMIN')
+USER1 = os.getenv('VICTIM1')
+USER2 = os.getenv('VICTIM2')
+USER3 = os.getenv('VICTIM3')
 
 # Bot Setup (Setup Intents) 
 
@@ -88,7 +91,7 @@ async def on_message(message) -> None:
     fileStream = open("log.txt", "a")
     fileStream.write(f'[{channel}] {username}: "{user_message}"\n')
     fileStream.close()
-    if username == 'thaze.':
+    if username == USER1:
         await maan_check(message)
         return
     if("ocho" in user_message.lower()):
@@ -96,7 +99,7 @@ async def on_message(message) -> None:
     if len(user_message) > 300:
         await puking_horse(message)
         return
-    if(username == 'bbop82' and ('cant' in user_message.lower() or 'can\'t' in user_message.lower())):
+    if(username == USER2 and ('cant' in user_message.lower() or 'can\'t' in user_message.lower())):
         temp1 = file_read_rng('ocho_reaction.txt')
         #await message.author.send(temp1)
         await message.channel.send(temp1)
@@ -109,7 +112,7 @@ async def on_message(message) -> None:
         #return
     # If Thang tries to use the Lord's weapon against us
     if 'https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXlpbWtlMDF5emwwdjAyZ3lobzhod2ZpczBoOHRmdXZ4c2hrZmlpMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Hb4Ns3rwPXmkdYhKnv/giphy.gif' in user_message or "https://tenor.com/view/memes-gif-9980668056796018353" in user_message:
-        if username == 'thangamangalang':
+        if username == USER3:
             await great_leader_response(message, False)
             return
         elif username == ADMIN:
