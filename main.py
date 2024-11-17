@@ -6,7 +6,7 @@ from discord import Intents, Client, Message, Game
 import discord
 from discord.ext import commands, tasks
 from responses import get_response, argument_winner, file_read_rng, nux_taxu_response
-from random import randint, choice
+from random import randint, choice, sample
 import asyncio
 # Load Token
 
@@ -117,6 +117,9 @@ async def on_message(message) -> None:
         elif username == ADMIN:
             await great_leader_response(message, True)
             return
+    if '!bingo' in user_message:
+        await bingo_sheet(message)
+        return
     await send_message(message, user_message)
 
 def main() -> None:
@@ -133,6 +136,104 @@ async def update_status(input_str: str) -> None:
     await client.change_presence(activity=Game(input_str))
     return
 
+async def bingo_sheet(message) -> None:
+    key_words = [
+        'Kys',
+        'Scapegoating',
+        'Gets Phone call',
+        'Sighs',
+        'Silent Treatment',
+        'Oh my god',
+        'Pedophile',
+        'Sigma',
+        'Mumble Artist',
+        'Cody',
+        'Homework/Classes/Roomate',
+        'Slur',
+        'Kick',
+        'Fake Mute',
+        'Sweats',
+        'Lame',
+        'Factually Wrong Statement',
+        'Overconfidence',
+        'Blames Laptop',
+        'Blames Opponent Lag',
+        'MC knockback',
+        'Falls off',
+        'No Hoes/Bitches',
+        'Ambience Louder than him',
+        'Brian',
+        'Complain others arent on',
+        'Talk about someone not in call',
+        'Smash Bros',
+        'His age is showing',
+        'Not listening',
+        'Gooner comment',
+        'Boomer comment',
+        'Racism',
+        'Homophobia',
+        'Work',
+        'Thang Discord Join call sound',
+        'Fails to follow instructions',
+        'Has to be the leader',
+        'Uses word/phrase incorrectly',
+        'Clash Royale',
+        'Genshin',
+        'Dies First',
+        'Baby Rage',
+        'Keyboard Smash bro',
+        'Content House',
+        'His YouTube Channel',
+        'Those who Know',
+        "Thang doesn't know",
+        'Vu',
+        'NIU',
+        'Glazing Himself',
+        'Complains about server changes',
+        'The good old days',
+        'Gay',
+        'Complains about Politics',
+        'Who is pinging me 🤬',
+        'Wasting my time!',
+        'Rivals Complain',
+        'Boomer gif',
+        'Diddy',
+        'Mr Beast',
+        'Edp',
+        'Donald Trump',
+        'ICE',
+        'ThangaQuest',
+        'New A.I. generated status/pfp',
+        'Lunchly',
+        'To strong of morals',
+        'Hypocrisy',
+        'Ocho',
+        'Randomly Brings up Anime',
+        'Hypixel Skyblock',
+        'Lopunny',
+        'Defending sus take',
+        'Dish it but can\’t take it',
+        'If/else',
+        'Vietnam',
+        'Bandwagoning/sheeping',
+        'Thang solo misery',
+        'Thats hilarious'
+        ]
+    rows = 5
+    cols = 5
+    bingo_items = sample(key_words, rows * cols)
+    bingo_list = [bingo_items[i * cols:(i + 1) * cols] for i in range(rows)]
+    bingo_list[2][2] = "Complain"
+    cell_width = max(len(word) for row in bingo_list for word in row) + 2
+    fileStream = open("bingo_sheet.txt", "w")
+    for row in bingo_list:
+        formatted_row = "|".join(word.center(cell_width) for word in row)
+        fileStream.write(f"|{formatted_row}|\n")
+        fileStream.write(f"{'-' * (cell_width * len(row) + len(row) + 1)}\n")
+    fileStream.close()
+    await message.channel.send(file=discord.File("bingo_sheet.txt"))
+    os.remove("bingo_sheet.txt")
+    return
 
 #Reacts with dog emojis
 async def ocho_check(message):
