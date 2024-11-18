@@ -117,7 +117,7 @@ async def on_message(message) -> None:
         elif username == ADMIN:
             await great_leader_response(message, True)
             return
-    if '!bingo' in user_message:
+    if '!bingo' in user_message and username != USER3:
         await bingo_sheet(message)
         return
     await send_message(message, user_message)
