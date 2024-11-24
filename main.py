@@ -226,6 +226,7 @@ async def bingo_sheet(message) -> None:
     bingo_list[2][2] = "Complain"
     cell_width = max(len(word) for row in bingo_list for word in row) + 2
     fileStream = open("bingo_sheet.txt", "w")
+    fileStream.write(f"{'-' * (cell_width * len(row) + len(row) + 1)}\n")
     for row in bingo_list:
         formatted_row = "|".join(word.center(cell_width) for word in row)
         fileStream.write(f"|{formatted_row}|\n")
