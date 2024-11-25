@@ -2,7 +2,7 @@
 
 import os
 from dotenv import load_dotenv
-from discord import Intents, Client, Message, Game
+from discord import Intents, Client, Message, Game, utils
 import discord
 from discord.ext import commands, tasks
 from responses import get_response, argument_winner, file_read_rng, nux_taxu_response
@@ -16,6 +16,8 @@ ADMIN = os.getenv('ADMIN')
 USER1 = os.getenv('VICTIM1')
 USER2 = os.getenv('VICTIM2')
 USER3 = os.getenv('VICTIM3')
+GUILD_ID = os.getenv('GUILD_ID')
+ROLE_NAME = os.getenv('ROLE_NAME')
 
 # Bot Setup (Setup Intents) 
 
@@ -120,6 +122,8 @@ async def on_message(message) -> None:
     if '!bingo' in user_message and username != USER3:
         await bingo_sheet(message)
         return
+    if '!giveadmin' in user_message and username != USER3:
+        await give_role(GUILD_ID, ROLE_NAME, message.author.id)
     await send_message(message, user_message)
 
 def main() -> None:
@@ -217,7 +221,13 @@ async def bingo_sheet(message) -> None:
         'Vietnam',
         'Bandwagoning/sheeping',
         'Thang solo misery',
-        'Thats hilarious'
+        'Thats hilarious',
+        'Removes all admin',
+        'ethernet',
+        'crashout',
+        '1 hour dinner',
+        'VTuber',
+        
         ]
     rows = 5
     cols = 5
@@ -226,7 +236,6 @@ async def bingo_sheet(message) -> None:
     bingo_list[2][2] = "Complain"
     cell_width = max(len(word) for row in bingo_list for word in row) + 2
     fileStream = open("bingo_sheet.txt", "w")
-    fileStream.write(f"{'-' * (cell_width * len(row) + len(row) + 1)}\n")
     for row in bingo_list:
         formatted_row = "|".join(word.center(cell_width) for word in row)
         fileStream.write(f"|{formatted_row}|\n")
@@ -288,5 +297,23 @@ async def maan_check(message) -> None:
     await message.add_reaction("💀")
     await message.add_reaction("🤡")
     await message.add_reaction("🙉")
+# Gives specified role in specified guilds
+async def give_role(guild_id: int, role_name: str, user_id: int):
+    guild = client.get_guild(int(guild_id))
+    if not guild:
+        print("Guild not found.")
+        return
+    
+    role = utils.get(guild.roles, name = role_name)
+    if not role:
+        print("Role not found.")
+        return
+    member = guild.get_member(user_id)
+    if not member:
+        print("User not found in the specified server.")
+        return
+    
+    await member.add_roles(role)
+    print(f"Added {role_name} role to {member.display_name} in {guild.name}.")
 if __name__ == '__main__':
     main()
