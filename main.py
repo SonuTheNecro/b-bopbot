@@ -18,6 +18,7 @@ USER2 = os.getenv('VICTIM2')
 USER3 = os.getenv('VICTIM3')
 GUILD_ID = os.getenv('GUILD_ID')
 ROLE_NAME = os.getenv('ROLE_NAME')
+ROLE2     = os.getenv("ROLE2")
 
 # Bot Setup (Setup Intents) 
 
@@ -93,7 +94,7 @@ async def on_message(message) -> None:
     fileStream.write(f'[{channel}] {username}: "{user_message}"\n')
     fileStream.close()
     if username == USER1:
-        await maan_check(message)
+        await idgaf_check(message)
         return
     if("ocho" in user_message.lower()):
         await ocho_check(message)
@@ -108,9 +109,6 @@ async def on_message(message) -> None:
     if(username == ADMIN and '!update_status' in user_message):
         await update_status(user_message)
         return
-    #if(username == ADMIN and '!pick_status' in user_message):
-        #await pick_status()
-        #return
     # If Thang tries to use the Lord's weapon against us
     if 'https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXlpbWtlMDF5emwwdjAyZ3lobzhod2ZpczBoOHRmdXZ4c2hrZmlpMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Hb4Ns3rwPXmkdYhKnv/giphy.gif' in user_message or "https://tenor.com/view/memes-gif-9980668056796018353" in user_message:
         if username == USER3:
@@ -124,6 +122,8 @@ async def on_message(message) -> None:
         return
     if '!giveadmin' in user_message and username != USER3:
         await give_role(GUILD_ID, ROLE_NAME, message.author.id)
+    if role2 in user_message:
+        await who_is_currently_hitler(message)
     await send_message(message, user_message)
 
 def main() -> None:
@@ -288,7 +288,7 @@ async def puking_horse(message) -> None:
             string = "https://pbs.twimg.com/media/GWKGr7IWgAEDaGd?format=jpg&name=900x900"
     await message.channel.send(string)
 # Replies whenever maan checks with the full combo
-async def maan_check(message) -> None:
+async def idgaf_check(message) -> None:
     await message.channel.send("Nah I'm Good")
     await message.channel.send(":skull:")
     await message.channel.send("idgaf")
@@ -297,6 +297,19 @@ async def maan_check(message) -> None:
     await message.add_reaction("💀")
     await message.add_reaction("🤡")
     await message.add_reaction("🙉")
+
+async def who_is_currently_hitler(message) -> None:
+    hitler_list = ["Clairen",
+                    "Zetternburn",
+                    "Fleet",
+                    "Maypul",
+                    "Ranno",
+                    "Wrastor",
+                    "Forsburn",
+                    "Kragg",
+                    "Orcane",
+                    "Loxodont"]
+    await message.channel.send(choice(hitler_list) + "is today's hitler!")
 # Gives specified role in specified guilds
 async def give_role(guild_id: int, role_name: str, user_id: int):
     guild = client.get_guild(int(guild_id))
