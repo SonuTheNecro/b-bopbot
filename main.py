@@ -18,7 +18,7 @@ USER2 = os.getenv('VICTIM2')
 USER3 = os.getenv('VICTIM3')
 GUILD_ID = os.getenv('GUILD_ID')
 ROLE_NAME = os.getenv('ROLE_NAME')
-ROLE2     = os.getenv("ROLE2")
+RIVALS_ROLE  = os.getenv('RIVALS_ROLE')
 
 # Bot Setup (Setup Intents) 
 
@@ -122,7 +122,7 @@ async def on_message(message) -> None:
         return
     if '!giveadmin' in user_message and username != USER3:
         await give_role(GUILD_ID, ROLE_NAME, message.author.id)
-    if role2 in user_message:
+    if RIVALS_ROLE  in user_message or '!hitler' in user_message:
         await who_is_currently_hitler(message)
     await send_message(message, user_message)
 
@@ -309,7 +309,7 @@ async def who_is_currently_hitler(message) -> None:
                     "Kragg",
                     "Orcane",
                     "Loxodont"]
-    await message.channel.send(choice(hitler_list) + "is today's hitler!")
+    await message.channel.send(choice(hitler_list) + " is today's hitler!")
 # Gives specified role in specified guilds
 async def give_role(guild_id: int, role_name: str, user_id: int):
     guild = client.get_guild(int(guild_id))
