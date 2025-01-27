@@ -300,7 +300,7 @@ async def idgaf_check(message) -> None:
 
 async def who_is_currently_hitler(message) -> None:
     hitler_list = ["Clairen",
-                    "Zetternburn",
+                    "Zetterburn",
                     "Fleet",
                     "Maypul",
                     "Ranno",
@@ -308,7 +308,9 @@ async def who_is_currently_hitler(message) -> None:
                     "Forsburn",
                     "Kragg",
                     "Orcane",
-                    "Loxodont"]
+                    "Loxodont",
+                    "Kragg",
+                    "Etalus"]
     await message.channel.send(choice(hitler_list) + " is today's hitler!")
 # Gives specified role in specified guilds
 async def give_role(guild_id: int, role_name: str, user_id: int):
